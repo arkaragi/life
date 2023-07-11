@@ -47,9 +47,9 @@ named "venv".
 
 To activate the virtual environment use:
 
-    .\venv\Scripts\activate     (Windows)
+    source venv/bin/activate    # Unix/MacOS
 
-    source venv/bin/activate    (Unix/MacOS)
+    .\venv\Scripts\activate     # Windows
 
 ### 3. Install the required dependencies:
 
@@ -58,8 +58,21 @@ Install the required packages with pip:
     pip install -r requirements.txt
 
 ### 4. Run the application:
-    
+
+Before running the application, make sure to set your PYTHONPATH to the current directory,
+so that Python can locate your module. You can do this by running:
+
+    export PYTHONPATH=.:$PYTHONPATH    # Unix/MacOS
+
+    set PYTHONPATH=.;%PYTHONPATH%      # Windows
+
+To run the application, use:
+
     python app.py
+
+In the case that you encounter any issues with the PYTHONPATH setting, make sure you're running 
+the commands in the right directory, and you've activated your virtual environment as mentioned 
+in the above steps.
 
 ### 5. Explore the Game of Life
 
